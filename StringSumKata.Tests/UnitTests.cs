@@ -10,12 +10,12 @@ namespace StringSumKata.Tests
     public class UnitTests
     {
         [Fact]
-        public void Should_Throw_ArgumentNullException_If_Argument_Is_Null()
+        public void Should_Throw_ArgumentException_If_Argument_Is_Null()
         {
             StringSumUtility ssu = new StringSumUtility();
             Action action = () => ssu.Sum(null, "1");
 
-            action.Should().ThrowExactly<ArgumentNullException>();
+            action.Should().ThrowExactly<ArgumentException>();
         }
 
         [Fact]
@@ -23,6 +23,15 @@ namespace StringSumKata.Tests
         {
             StringSumUtility ssu = new StringSumUtility();
             Action action = () => ssu.Sum("", "1");
+
+            action.Should().ThrowExactly<ArgumentException>();
+        }
+
+        [Fact]
+        public void Should_Throw_ArgumentException_If_Argument_Is_Whitespace()
+        {
+            StringSumUtility ssu = new StringSumUtility();
+            Action action = () => ssu.Sum(" ", "1");
 
             action.Should().ThrowExactly<ArgumentException>();
         }
