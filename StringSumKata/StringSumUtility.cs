@@ -16,10 +16,19 @@ namespace StringSumKata
                 throw new ArgumentException();
             }
 
-            int sum = Convert.ToInt32(num1) + Convert.ToInt32(num2);
+            int sum = ConvertToInt(num1) + ConvertToInt(num2);
             Convert.ToString(sum);
 
             return Convert.ToString(sum);
+        }
+
+        private static int ConvertToInt(string str)
+        {
+            if (str.All(Char.IsDigit))
+            {
+                return Convert.ToInt32(str);
+            }
+            return 0;
         }
     }
 }
