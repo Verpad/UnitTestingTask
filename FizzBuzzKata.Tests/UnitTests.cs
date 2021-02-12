@@ -18,7 +18,7 @@ namespace FizzBuzzKata.Tests
         }
 
         [Fact]
-        public void Should_Return_Fizz_At_Every_Third_Position()
+        public void Should_Return_Fizz_At_Every_Third_And_Not_Fifteenth_Position()
         {
             FizzBuzzUtility fbu = new FizzBuzzUtility();
             string[] elements = fbu.GenerateElements();
@@ -26,7 +26,7 @@ namespace FizzBuzzKata.Tests
             bool isRight = true;
             for (int i = 2; i < elements.Length; i = i + 3)
             {
-                if (elements[i] != "Fizz")
+                if ((i+1)%15 !=0 && elements[i] != "Fizz")
                 {
                     isRight = false;
                     break;
@@ -37,7 +37,7 @@ namespace FizzBuzzKata.Tests
         }
 
         [Fact]
-        public void Should_Return_Buzz_At_Every_Fifth_Position()
+        public void Should_Return_Buzz_At_Every_Fifth_And_Not_Fifteenth_Position()
         {
             FizzBuzzUtility fbu = new FizzBuzzUtility();
             string[] elements = fbu.GenerateElements();
@@ -45,7 +45,7 @@ namespace FizzBuzzKata.Tests
             bool isRight = true;
             for (int i = 4; i < elements.Length; i = i + 5)
             {
-                if (elements[i] != "Buzz")
+                if ((i + 1) % 15 != 0 && elements[i] != "Buzz")
                 {
                     isRight = false;
                     break;
