@@ -44,5 +44,23 @@ namespace StringSumKata.Tests
 
             result.Should().Be("0");
         }
+        
+        [Fact]
+        public void Should_Return_One_Argument_If_Another_Is_Not_Natural()
+        {
+            StringSumUtility ssu = new StringSumUtility();
+            var result = ssu.Sum("asd", "13");
+
+            result.Should().Be("13");
+        }
+
+        [Fact]
+        public void Should_Return_Sum_Of_Arguments()
+        {
+            StringSumUtility ssu = new StringSumUtility();
+            var result = ssu.Sum("1", "2");
+
+            result.Should().Be("3");
+        }
     }
 }

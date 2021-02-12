@@ -16,7 +16,10 @@ namespace StringSumKata
                 throw new ArgumentException();
             }
 
-            return num1 + num2;
+            int sum = Convert.ToInt32(num1) + Convert.ToInt32(num2);
+            Convert.ToString(sum);
+
+            return Convert.ToString(sum);
         }
     }
 }
