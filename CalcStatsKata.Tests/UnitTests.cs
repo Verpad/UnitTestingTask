@@ -43,7 +43,7 @@ namespace CalcStatsKata.Tests
             int[] elements = { -1, 2, 0, 4, 5 };
             csu.ProcessElements(elements);
 
-            csu.MaxValue.Should().Be(-1);
+            csu.MinValue.Should().Be(-1);
         }
 
         [Fact]

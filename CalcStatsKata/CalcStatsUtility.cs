@@ -8,14 +8,28 @@ namespace CalcStatsKata
 {
     public class CalcStatsUtility
     {
+        public int ElementsCount;
         public int MaxValue;
         public int MinValue;
-        public int ElementsCount;
         public double AverageValue;
 
         public void ProcessElements(int[] elements)
         {
-            throw new NotImplementedException();
+            if (elements == null)
+            {
+                throw new ArgumentNullException();
+            }
+
+            if (elements.Length == 0)
+            {
+                ElementsCount = 0;
+                return;
+            }
+
+            ElementsCount = elements.Length;
+            MaxValue = elements.Max();
+            MinValue = elements.Min();
+            AverageValue = elements.Average();
         }
     }
 }
